@@ -745,3 +745,13 @@ There are 2 ways to put a breakpoint on a managed method:
 - Wow64 Debugging: https://docs.microsoft.com/en-us/windows/win32/winprog64/debugging-wow64
 - .thread <address> - set register context
 - Replace existing system drivers with kdfiles: https://kobyk.wordpress.com/2008/07/04/replacing-boot-load-drivers-with-the-windows-boot-debugger/
+
+# Sahar's Edit
+## Generic notes
+**Get _KPCR**
+- rdmsr c000101 (processor dependent)
+- !pcr
+- @$pcr
+**Get System Process _EPROCESS**
+- dp not!PsInitialSystemProcess L1
+  
